@@ -4,7 +4,7 @@
 
 ## Test in Production:
 
-Open [https://main.d1tdzrqq2m2s24.amplifyapp.com](https://main.d1tdzrqq2m2s24.amplifyapp.com).
+Open [prod](https://65c2215a60a1c87d6bc6b6d7--resilient-donut-38a760.netlify.app/#/auth/login).
 
 ## Execute local
 
