@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>Convert DL</span>
+  <span class="spacer"></span>
+  <div class="button-row">
+    <div class="role-button-container">
+      <p class="role-text">
+        <strong>{{ user()?.rol === 1 ? "Ejecutivo" : "Admin" }}</strong>
+      </p>
+    </div>
+  </div>
+  <button
+    mat-icon-button
+    class="logout-icon"
+    aria-label="icon-button with logout icon"
+    (click)="onLogout()"
+  >
+    <mat-icon class="centered-icon">logout</mat-icon>
+  </button>
+</mat-toolbar>

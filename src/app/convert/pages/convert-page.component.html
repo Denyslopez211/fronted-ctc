@@ -1,0 +1,77 @@
+<div class="container">
+  <h1 class="title">Convertir de UF a CLP</h1>
+  <div class="cards-wrapper">
+    <mat-card class="card">
+      <form
+        class="create-account-form"
+        autocomplete="off"
+        [formGroup]="convertForm"
+        (ngSubmit)="create()"
+      >
+        <mat-card-header class="mat-card-header">
+          <h2>Calcular</h2></mat-card-header
+        >
+        <mat-card-content>
+          <mat-form-field color="primary" class="mat-form-field">
+            <mat-label>Fecha</mat-label>
+            <input
+              matInput
+              class="date-convert"
+              [matDatepicker]="picker1"
+              formControlName="dateConvert"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="mat-form-field" floatLabel="always">
+            <mat-label>Cantidad UF</mat-label>
+            <input
+              matInput
+              type="number"
+              class="example-right-align"
+              placeholder="0"
+              formControlName="amountConvert"
+            />
+            <span matTextPrefix>UF&nbsp;</span>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            [disabled]="convertForm.invalid"
+            type="submit"
+            class="centered-button"
+            mat-raised-button
+            color="primary"
+          >
+            Convertir a CLP
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+
+    <mat-card class="card">
+      <mat-card-header class="mat-card-header">
+        <h2>Resultados</h2>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <p>Fecha conversion: {{ dateConvert }}</p>
+        <p>Monto a calcular: {{ originAmount }} UF</p>
+        <p>Valor de la UF: $ {{ valueUF }}</p>
+        <p>Monto Calculado: $ {{ valueCLP }}</p>
+      </mat-card-content>
+      <mat-card-actions *ngIf="user()?.rol === 2">
+        <button
+          (click)="goToHistories()"
+          class="centered-button"
+          mat-raised-button
+          color="accent"
+        >
+          Ver Historial
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
